@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Footer() {
@@ -162,7 +163,7 @@ export default function Footer() {
                     <div className="md:col-span-2">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1.5">
-                                <img src="/logo.webp" alt="Ridera" className="w-full h-full object-contain" />
+                                <Image src="/logo.webp" alt="Ridera" width={40} height={40} className="w-full h-full object-contain" />
                             </div>
                             <div>
                                 <div className="text-xl font-bold">Ridera</div>

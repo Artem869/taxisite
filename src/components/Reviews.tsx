@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Reviews() {
@@ -203,9 +204,13 @@ export default function Reviews() {
                                         <div className="bg-gradient-to-br from-slate-50 to-gray-50 rounded-3xl p-6 shadow-xl border border-gray-200">
                                             {/* Изображение отзыва */}
                                             <div className="aspect-[16/9] max-w-2xl mx-auto bg-white rounded-2xl overflow-hidden border-2 border-gray-200 mb-4">
-                                                <img
+                                                <Image
                                                     src={review.image}
                                                     alt={review.name}
+                                                    width={800}
+                                                    height={450}
+                                                    loading="lazy"
+                                                    quality={80}
                                                     className="w-full h-full object-contain"
                                                 />
                                             </div>
