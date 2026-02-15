@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 
 # Sitemaps
-Sitemap: https://ridera.kz/sitemap.xml
+Sitemap: https://taxisite-three.vercel.app/sitemap.xml

@@ -37,6 +37,10 @@ export default function Cars() {
                                     alt="Chevrolet Monza"
                                     width={600}
                                     height={400}
+                                    loading="lazy"
+                                    quality={85}
+                                    placeholder="blur"
+                                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
                                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                                 />
                             </div>
@@ -104,6 +108,10 @@ export default function Cars() {
                                     alt="Kia Seltos"
                                     width={600}
                                     height={400}
+                                    loading="lazy"
+                                    quality={85}
+                                    placeholder="blur"
+                                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
                                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                                 />
                             </div>
@@ -217,6 +225,8 @@ export default function Cars() {
                                                 alt={`Chevrolet Monza фото ${num}`}
                                                 width={400}
                                                 height={300}
+                                                loading="lazy"
+                                                quality={80}
                                                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                             />
                                         </div>
@@ -327,6 +337,8 @@ export default function Cars() {
                                                 alt={`Kia Seltos фото ${num}`}
                                                 width={400}
                                                 height={300}
+                                                loading="lazy"
+                                                quality={80}
                                                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                             />
                                         </div>

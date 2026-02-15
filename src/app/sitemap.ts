@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://ridera.kz'
+    const baseUrl = 'https://taxisite-three.vercel.app'
 
     return [
         {
