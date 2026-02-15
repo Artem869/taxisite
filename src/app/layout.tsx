@@ -8,36 +8,39 @@ const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 export const metadata: Metadata = {
     metadataBase: new URL('https://ridera.kz'),
     title: {
-        default: 'Ridera - Аренда автомобилей в Астане | Прокат авто без водителя',
+        default: 'Ridera - Аренда автомобилей с выкупом в Алматы | Прокат авто без водителя',
         template: '%s | Ridera'
     },
-    description: 'Ridera Kazakhstan - аренда автомобилей премиум-класса в Астане без водителя. Kia Seltos, Geely Monjaro. Простые условия аренды, доступные цены от 15000₸/сутки, быстрое оформление за 15 минут.',
+    description: 'Ridera Kazakhstan - аренда автомобилей с выкупом в Алматы без водителя. Kia Seltos,  Chevrolet Monza. Простые условия аренды, доступные цены от 13000₸/сутки, быстрое оформление за 30 минут.',
     keywords: [
         // Основные запросы
-        'аренда авто Астана',
-        'прокат автомобилей Астана',
-        'аренда машины Астана',
-        'авто в аренду Астана',
+        'аренда авто Алматы',
+        'прокат автомобилей Алматы',
+        'аренда машины Алматы',
+        'авто в аренду Алматы',
         'прокат авто без водителя',
+        'авто под выкуп',
+
 
         // Модели автомобилей
-        'Kia Seltos аренда',
-        'Geely Monjaro прокат',
-        'аренда кроссовера Астана',
+        'Kia Seltos',
+        'Chevrolet Monza',
+        'аренда авто Алматы',
 
         // Брендовые запросы
         'Ridera',
         'Ridera Kazakhstan',
-        'Ridera Астана',
+        'Ridera Алматы',
+        'Ридера',
 
         // Длинные хвосты
-        'аренда авто недорого Астана',
+        'аренда авто недорого Алматы',
         'прокат автомобилей посуточно',
-        'аренда машины на сутки',
-        'где арендовать авто в Астане',
+        'аренда машины для выкупа',
+        'где арендовать авто в Алматы',
 
         // Казахский язык
-        'Астана көлік жалдау',
+        'Алматы көлік жалдау',
         'автомобиль жалға алу',
     ],
     authors: [{ name: 'Ridera Kazakhstan' }],
@@ -71,24 +74,24 @@ export const metadata: Metadata = {
         locale: 'ru_KZ',
         url: 'https://ridera.kz',
         siteName: 'Ridera - Аренда автомобилей',
-        title: 'Ridera - Аренда автомобилей в Астане | Прокат премиум авто',
-        description: 'Прокат автомобилей премиум-класса в Астане без водителя. Kia Seltos, Geely Monjaro. Цены от 15000₸/сутки. Быстрое оформление за 15 минут. Звоните: +7 775 042 69 45',
+        title: 'Ridera - Аренда автомобилей в Алматы | Прокат премиум авто',
+        description: 'Прокат автомобилей в Алматы без водителя. Kia Seltos, Chevrolet Monza. Цены от 13000₸/сутки. Быстрое оформление за 30 минут. Звоните: +7 775 042 69 45',
         images: [
             {
-                url: '/og-image.png', // Создадим позже
+                url: '/og-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'Ridera - Аренда автомобилей в Астане',
+                alt: 'Ridera - Аренда автомобилей в Алматы',
                 type: 'image/png',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Ridera - Аренда автомобилей в Астане',
-        description: 'Прокат премиум авто без водителя. Kia Seltos, Geely Monjaro. От 15000₸/сутки.',
+        title: 'Ridera - Аренда автомобилей в Алматы',
+        description: 'Прокат премиум авто без водителя. Kia Seltos, Chevrolet Monza. От 13000₸/сутки.',
         images: ['/og-image.png'],
-        creator: '@ridera_kz', // Замените на ваш Twitter, если есть
+        creator: '',
     },
     robots: {
         index: true,
@@ -116,12 +119,12 @@ export default function RootLayout({
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
         name: 'Ridera',
-        description: 'Прокат автомобилей премиум-класса в Астане',
+        description: 'Прокат автомобилей премиум-класса в Алматы',
         url: 'https://ridera.kz',
         telephone: '+77750426945',
         address: {
             '@type': 'PostalAddress',
-            addressLocality: 'Астана',
+            addressLocality: 'Алматы',
             addressCountry: 'KZ'
         },
         geo: {
@@ -130,10 +133,10 @@ export default function RootLayout({
             longitude: 71.4491
         },
         priceRange: '$$',
-        openingHours: 'Mo-Su 00:00-23:59',
+        openingHours: 'Пн-Пт 10:00-18:00',
         image: 'https://ridera.kz/logo.png',
         sameAs: [
-            // Добавьте ссылки на соцсети, если есть
+            'https://www.instagram.com/ridera.kz'
         ]
     };
 
