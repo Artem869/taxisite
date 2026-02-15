@@ -6,7 +6,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext'
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://taxisite-three.vercel.app'),
+    metadataBase: new URL('https://taxisite-three.vercel.app/'),
     title: {
         default: 'Ridera - Аренда автомобилей с выкупом в Алматы',
         template: '%s | Ridera'
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'ru_KZ',
-        url: 'https://taxisite-three.vercel.app',
+        url: 'https://taxisite-three.vercel.app/',
         siteName: 'Ridera - Аренда автомобилей',
         title: 'Ridera - Аренда автомобилей в Алматы | Авто под выкуп',
         description: 'Аренда автомобилей в Алматы. Kia Seltos, Chevrolet Monza. Цены от 13000₸/сутки. Быстрое оформление за 30 минут. Звоните: +7 775 042 69 45',
@@ -119,7 +119,7 @@ export default function RootLayout({
         '@type': 'LocalBusiness',
         name: 'Ridera',
         description: 'Авто под выкуп в Алматы',
-        url: 'https://taxisite-three.vercel.app',
+        url: 'https://taxisite-three.vercel.app/',
         telephone: '+77750426945',
         address: {
             '@type': 'PostalAddress',
