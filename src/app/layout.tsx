@@ -6,7 +6,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext'
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://ridera.kz'),
+    metadataBase: new URL('https://taxisite-three.vercel.app'),
     title: {
         default: 'Ridera - Аренда автомобилей с выкупом в Алматы | Прокат авто без водителя',
         template: '%s | Ridera'
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'ru_KZ',
-        url: 'https://ridera.kz',
+        url: 'https://taxisite-three.vercel.app',
         siteName: 'Ridera - Аренда автомобилей',
         title: 'Ridera - Аренда автомобилей в Алматы | Прокат премиум авто',
         description: 'Прокат автомобилей в Алматы без водителя. Kia Seltos, Chevrolet Monza. Цены от 13000₸/сутки. Быстрое оформление за 30 минут. Звоните: +7 775 042 69 45',
@@ -120,7 +120,7 @@ export default function RootLayout({
         '@type': 'LocalBusiness',
         name: 'Ridera',
         description: 'Прокат автомобилей премиум-класса в Алматы',
-        url: 'https://ridera.kz',
+        url: 'https://taxisite-three.vercel.app',
         telephone: '+77750426945',
         address: {
             '@type': 'PostalAddress',
@@ -134,7 +134,7 @@ export default function RootLayout({
         },
         priceRange: '$$',
         openingHours: 'Пн-Пт 10:00-18:00',
-        image: 'https://ridera.kz/logo.png',
+        image: 'https://taxisite-three.vercel.app/logo.png',
         sameAs: [
             'https://www.instagram.com/ridera.kz'
         ]
