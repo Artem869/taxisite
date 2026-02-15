@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         default: 'Ridera - Аренда автомобилей с выкупом в Алматы',
         template: '%s | Ridera'
     },
-    description: 'Ridera Kazakhstan - аренда автомобилей с выкупом в Алматы. Kia Seltos,  Chevrolet Monza. Простые условия аренды, доступные цены от 13000₸/сутки, быстрое оформление за 30 минут.',
+    description: 'Ridera Kazakhstan - аренда автомобилей с выкупом в Алматы. Kia Seltos, Chevrolet Monza. Простые условия аренды, доступные цены от 13000₸/сутки, быстрое оформление за 30 минут.',
     keywords: [
         // Основные запросы
         'аренда авто Алматы',
@@ -21,11 +21,10 @@ export const metadata: Metadata = {
         'аренда авто',
         'авто под выкуп',
 
-
         // Модели автомобилей
         'Kia Seltos',
         'Chevrolet Monza',
-        'аренда авто Алматы',
+        'аренда кроссовера Алматы',
 
         // Брендовые запросы
         'Ridera',
@@ -75,7 +74,7 @@ export const metadata: Metadata = {
         url: 'https://taxisite-three.vercel.app',
         siteName: 'Ridera - Аренда автомобилей',
         title: 'Ridera - Аренда автомобилей в Алматы | Авто под выкуп',
-        description: 'Аренла автомобилей в Алматы. Kia Seltos, Chevrolet Monza. Цены от 13000₸/сутки. Быстрое оформление за 30 минут. Звоните: +7 775 042 69 45',
+        description: 'Аренда автомобилей в Алматы. Kia Seltos, Chevrolet Monza. Цены от 13000₸/сутки. Быстрое оформление за 30 минут. Звоните: +7 775 042 69 45',
         images: [
             {
                 url: '/og-image.png',
