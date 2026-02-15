@@ -77,7 +77,7 @@ export const metadata: Metadata = {
         description: 'Аренда автомобилей в Алматы. Kia Seltos, Chevrolet Monza. Цены от 13000₸/сутки. Быстрое оформление за 30 минут. Звоните: +7 775 042 69 45',
         images: [
             {
-                url: '/og-image.png',
+                url: '/og-image-v2.png',
                 width: 1200,
                 height: 630,
                 alt: 'Ridera - Аренда автомобилей в Алматы',
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Ridera - Аренда автомобилей в Алматы',
         description: 'Авто под выкуп. Kia Seltos, Chevrolet Monza. От 13000₸/сутки.',
-        images: ['/og-image.png'],
+        images: ['/og-image-v2.png'],
         creator: '',
     },
     robots: {
