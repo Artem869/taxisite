@@ -87,10 +87,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Ridera - Аренда автомобилей в Алматы',
-        description: 'Авто под выкуп. Kia Seltos, Chevrolet Monza. От 13000₸/сутки.',
+        title: 'Ridera - Аренда автомобилей в Алматы | Авто под выкуп',
+        description: 'Аренда автомобилей в Алматы. Kia Seltos, Chevrolet Monza. Цены от 13000₸/сутки. Быстрое оформление за 30 минут.',
         images: ['/og-image-v3.png'],
-        creator: '',
     },
     robots: {
         index: true,
@@ -114,13 +113,17 @@ export default function RootLayout({
 }: {
     children: React.ReactNode
 }) {
+    // LocalBusiness + Organization Schema
     const jsonLd = {
         '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
+        '@type': ['LocalBusiness', 'AutoRental'],
+        '@id': 'https://taxisite-three.vercel.app/#business',
         name: 'Ridera',
-        description: 'Авто под выкуп в Алматы',
+        legalName: 'Ridera Kazakhstan',
+        description: 'Аренда автомобилей c возможностью выкупа в Алматы',
         url: 'https://taxisite-three.vercel.app/',
         telephone: '+77750426945',
+        email: 'ceo@taxigroup.kz',
         address: {
             '@type': 'PostalAddress',
             addressLocality: 'Алматы',
@@ -128,15 +131,89 @@ export default function RootLayout({
         },
         geo: {
             '@type': 'GeoCoordinates',
-            latitude: 51.1694,
-            longitude: 71.4491
+            latitude: 43.2220,
+            longitude: 76.8512
         },
-        priceRange: '$$',
-        openingHours: 'Пн-Пт 10:00-18:00',
-        image: 'https://taxisite-three.vercel.app/logo.png',
+        priceRange: '13000₸-18000₸',
+        openingHoursSpecification: [
+            {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '10:00',
+                closes: '18:00'
+            }
+        ],
+        image: 'https://taxisite-three.vercel.app/og-image-v3.png',
+        logo: 'https://taxisite-three.vercel.app/logo.png',
         sameAs: [
             'https://www.instagram.com/ridera.kz'
-        ]
+        ],
+        areaServed: {
+            '@type': 'City',
+            name: 'Алматы'
+        },
+        hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Автомобили в аренду',
+            itemListElement: [
+                {
+                    '@type': 'Offer',
+                    itemOffered: {
+                        '@type': 'Car',
+                        name: 'Kia Seltos',
+                        brand: {
+                            '@type': 'Brand',
+                            name: 'Kia'
+                        },
+                        model: 'Seltos',
+                        vehicleEngine: {
+                            '@type': 'EngineSpecification',
+                            fuelType: 'Gasoline'
+                        }
+                    },
+                    price: '18000',
+                    priceCurrency: 'KZT',
+                    priceSpecification: {
+                        '@type': 'UnitPriceSpecification',
+                        price: '18000',
+                        priceCurrency: 'KZT',
+                        referenceQuantity: {
+                            '@type': 'QuantitativeValue',
+                            value: 1,
+                            unitText: 'DAY'
+                        }
+                    }
+                },
+                {
+                    '@type': 'Offer',
+                    itemOffered: {
+                        '@type': 'Car',
+                        name: 'Chevrolet Monza',
+                        brand: {
+                            '@type': 'Brand',
+                            name: 'Chevrolet'
+                        },
+                        model: 'Monza',
+                        vehicleEngine: {
+                            '@type': 'EngineSpecification',
+                            fuelType: 'Gasoline'
+                        }
+                    },
+                    price: '13000',
+                    priceCurrency: 'KZT',
+                    priceSpecification: {
+                        '@type': 'UnitPriceSpecification',
+                        price: '13000',
+                        priceCurrency: 'KZT',
+                        referenceQuantity: {
+                            '@type': 'QuantitativeValue',
+                            value: 1,
+                            unitText: 'DAY'
+                        }
+                    }
+                }
+            ]
+        }
     };
 
     return (
