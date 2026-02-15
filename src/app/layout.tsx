@@ -8,17 +8,17 @@ const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 export const metadata: Metadata = {
     metadataBase: new URL('https://taxisite-three.vercel.app'),
     title: {
-        default: 'Ridera - Аренда автомобилей с выкупом в Алматы | Прокат авто без водителя',
+        default: 'Ridera - Аренда автомобилей с выкупом в Алматы',
         template: '%s | Ridera'
     },
-    description: 'Ridera Kazakhstan - аренда автомобилей с выкупом в Алматы без водителя. Kia Seltos,  Chevrolet Monza. Простые условия аренды, доступные цены от 13000₸/сутки, быстрое оформление за 30 минут.',
+    description: 'Ridera Kazakhstan - аренда автомобилей с выкупом в Алматы. Kia Seltos,  Chevrolet Monza. Простые условия аренды, доступные цены от 13000₸/сутки, быстрое оформление за 30 минут.',
     keywords: [
         // Основные запросы
         'аренда авто Алматы',
         'прокат автомобилей Алматы',
         'аренда машины Алматы',
         'авто в аренду Алматы',
-        'прокат авто без водителя',
+        'аренда авто',
         'авто под выкуп',
 
 
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
         // Длинные хвосты
         'аренда авто недорого Алматы',
-        'прокат автомобилей посуточно',
+        'аренда автомобилей посуточно',
         'аренда машины для выкупа',
         'где арендовать авто в Алматы',
 
@@ -74,8 +74,8 @@ export const metadata: Metadata = {
         locale: 'ru_KZ',
         url: 'https://taxisite-three.vercel.app',
         siteName: 'Ridera - Аренда автомобилей',
-        title: 'Ridera - Аренда автомобилей в Алматы | Прокат премиум авто',
-        description: 'Прокат автомобилей в Алматы без водителя. Kia Seltos, Chevrolet Monza. Цены от 13000₸/сутки. Быстрое оформление за 30 минут. Звоните: +7 775 042 69 45',
+        title: 'Ridera - Аренда автомобилей в Алматы | Авто под выкуп',
+        description: 'Аренла автомобилей в Алматы. Kia Seltos, Chevrolet Monza. Цены от 13000₸/сутки. Быстрое оформление за 30 минут. Звоните: +7 775 042 69 45',
         images: [
             {
                 url: '/og-image.png',
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Ridera - Аренда автомобилей в Алматы',
-        description: 'Прокат премиум авто без водителя. Kia Seltos, Chevrolet Monza. От 13000₸/сутки.',
+        description: 'Авто под выкуп. Kia Seltos, Chevrolet Monza. От 13000₸/сутки.',
         images: ['/og-image.png'],
         creator: '',
     },
@@ -119,7 +119,7 @@ export default function RootLayout({
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
         name: 'Ridera',
-        description: 'Прокат автомобилей премиум-класса в Алматы',
+        description: 'Авто под выкуп в Алматы',
         url: 'https://taxisite-three.vercel.app',
         telephone: '+77750426945',
         address: {
