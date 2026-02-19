@@ -1,12 +1,105 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { Marquee } from '@/components/ui/marquee'
+
+// Компонент анимированного счетчика
+function AnimatedCounter({ value, isVisible }: { value: string, isVisible: boolean }) {
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        if (!isVisible) return
+
+        // Извлекаем число из строки (например, "5+" -> 5, "10,000+" -> 10000, "90%" -> 90)
+        const numericValue = parseInt(value.replace(/[^0-9]/g, ''))
+        const hasPlus = value.includes('+')
+        const hasPercent = value.includes('%')
+        const hasComma = value.includes(',')
+
+        let current = 0
+        const increment = numericValue / 50 // 50 шагов анимации
+        const duration = 3000 // 3 секунды
+        const stepTime = duration / 50
+
+        const timer = setInterval(() => {
+            current += increment
+            if (current >= numericValue) {
+                setCount(numericValue)
+                clearInterval(timer)
+            } else {
+                setCount(Math.floor(current))
+            }
+        }, stepTime)
+
+        return () => clearInterval(timer)
+    }, [isVisible, value])
+
+    // Форматируем число обратно с + или %
+    const formatCount = (num: number) => {
+        const hasPlus = value.includes('+')
+        const hasPercent = value.includes('%')
+        const hasComma = value.includes(',')
+
+        let formatted = num.toString()
+        if (hasComma && num >= 1000) {
+            formatted = num.toLocaleString('en-US')
+        }
+        if (hasPlus) formatted += '+'
+        if (hasPercent) formatted += '%'
+
+        return formatted
+    }
+
+    return <>{formatCount(count)}</>
+}
 
 export default function About() {
     const { t } = useLanguage()
     const [hoveredPartner, setHoveredPartner] = useState<number | null>(null)
+    const [isVisible, setIsVisible] = useState(false)
+    const [statsVisible, setStatsVisible] = useState(false)
+    const sectionRef = useRef<HTMLElement>(null)
+    const statsRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true)
+                    }
+                })
+            },
+            { threshold: 0.1 }
+        )
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current)
+        }
+
+        return () => observer.disconnect()
+    }, [])
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setStatsVisible(true)
+                    }
+                })
+            },
+            { threshold: 0.3 }
+        )
+
+        if (statsRef.current) {
+            observer.observe(statsRef.current)
+        }
+
+        return () => observer.disconnect()
+    }, [])
 
     // Debug: проверяем данные
     console.log('About stats items:', t.about.stats?.items)
@@ -36,13 +129,17 @@ export default function About() {
         { id: 4, name: 'Geely', categoryKey: 'manufacturer', color: 'from-slate-600 to-slate-800', logo: '/partners/png/geely.webp' },
         { id: 5, name: 'Freedom Insurance', categoryKey: 'insurance', color: 'from-orange-500 to-red-500', logo: '/partners/png/freedom.png' },
         { id: 6, name: 'Hyundai', categoryKey: 'manufacturer', color: 'from-blue-600 to-blue-800', logo: '/partners/png/hyundai.jpg' },
-        { id: 7, name: 'Orbis Auto', categoryKey: 'dealer', color: 'from-purple-500 to-pink-500', logo: '/partners/png/orbis.webp' },
+        { id: 7, name: 'Orbis Auto', categoryKey: 'dealer', color: 'from-purple-500 to-pink-500', logo: '/partners/png/orbissauto.webp' },
         { id: 8, name: 'Kaiya', categoryKey: 'dealer', color: 'from-cyan-500 to-blue-500', logo: '/partners/png/kaiyi.png' },
         { id: 9, name: 'MG', categoryKey: 'manufacturer', color: 'from-red-600 to-black', logo: '/partners/png/mg.png' }
     ]
 
+    // Разделяем партнеров на две группы для двух каруселей
+    const firstRow = partners.slice(0, Math.ceil(partners.length / 2))
+    const secondRow = partners.slice(Math.ceil(partners.length / 2))
+
     return (
-        <section id="о-компании" className="relative py-20 overflow-hidden">
+        <section ref={sectionRef} id="о-компании" className="relative py-20 overflow-hidden">
             {/* Анимированный фон */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-100"></div>
 
@@ -52,7 +149,7 @@ export default function About() {
 
             <div className="relative max-w-7xl mx-auto px-6">
                 {/* Заголовок */}
-                <div className="text-center mb-16">
+                <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 via-gray-800 to-slate-900 bg-clip-text text-transparent mb-4">
                         {t.about.title}
                     </h2>
@@ -62,7 +159,7 @@ export default function About() {
                 </div>
 
                 {/* Миссия */}
-                <div className="mb-16">
+                <div className={`mb-16 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl"></div>
@@ -122,7 +219,10 @@ export default function About() {
             </div>
 
             {/* Достижения - минималистичный блок */}
-            <div className="relative mt-20 mb-20">
+            <div
+                ref={statsRef}
+                className="relative mt-20 mb-20"
+            >
                 <div className="max-w-5xl mx-auto px-6">
                     <div className="bg-white rounded-3xl p-12 shadow-xl border border-gray-100">
                         <div className="grid md:grid-cols-3 gap-12">
@@ -132,7 +232,7 @@ export default function About() {
                                     className="text-center group"
                                 >
                                     <div className="text-6xl font-black bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent mb-3 group-hover:from-orange-500 group-hover:to-orange-600 transition-all duration-300">
-                                        {stat.value}
+                                        <AnimatedCounter value={stat.value} isVisible={statsVisible} />
                                     </div>
                                     <p className="text-gray-600 text-lg font-medium">
                                         {stat.label}
@@ -157,59 +257,102 @@ export default function About() {
                         </p>
                     </div>
 
-                    {/* Интерактивная сетка партнёров */}
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-12">
-                        {partners.map((partner, index) => (
-                            <div
-                                key={partner.id}
-                                onMouseEnter={() => setHoveredPartner(partner.id)}
-                                onMouseLeave={() => setHoveredPartner(null)}
-                                className="group relative"
-                                style={{
-                                    animationDelay: `${index * 50}ms`,
-                                    transform: hoveredPartner === partner.id ? 'scale(1.05)' : 'scale(1)',
-                                    transition: 'transform 0.3s ease'
-                                }}
-                            >
-                                {/* Светящийся фон */}
-                                <div className={`absolute inset-0 bg-gradient-to-br ${partner.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 rounded-2xl`}></div>
+                    {/* Двойная карусель партнёров */}
+                    <div className="relative mb-12">
+                        {/* Первая карусель - слева направо */}
+                        <Marquee pauseOnHover className="[--duration:25s] mb-6">
+                            {firstRow.map((partner) => (
+                                <div
+                                    key={partner.id}
+                                    className="group relative mx-4"
+                                >
+                                    {/* Светящийся фон */}
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${partner.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 rounded-2xl`}></div>
 
-                                <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent group-hover:border-gray-200 h-full">
-                                    {/* Логотип компании */}
-                                    <div className="w-full h-28 mb-4 flex items-center justify-center rounded-xl p-4">
-                                        <Image
-                                            src={partner.logo}
-                                            alt={partner.name}
-                                            width={200}
-                                            height={120}
-                                            className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                                        />
-                                    </div>
+                                    <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent group-hover:border-gray-200 w-64 h-48">
+                                        {/* Логотип компании */}
+                                        <div className="w-full h-20 mb-3 flex items-center justify-center rounded-xl">
+                                            <Image
+                                                src={partner.logo}
+                                                alt={partner.name}
+                                                width={120}
+                                                height={80}
 
-                                    {/* Название */}
-                                    <h4 className="text-xl font-bold text-gray-900 mb-2">
-                                        {partner.name}
-                                    </h4>
+                                            />
+                                        </div>
 
-                                    {/* Категория */}
-                                    <div className={`inline-flex items-center gap-1.5 bg-gradient-to-r ${partner.color} bg-clip-text text-transparent`}>
-                                        <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                                        </svg>
-                                        <span className="text-xs sm:text-sm font-semibold text-gray-600 break-words">
-                                            {t.about.partners.categories[partner.categoryKey as keyof typeof t.about.partners.categories]}
-                                        </span>
-                                    </div>
+                                        {/* Название */}
+                                        <h4 className="text-lg font-bold text-gray-900 mb-2 text-center">
+                                            {partner.name}
+                                        </h4>
 
-                                    {/* Галочка партнёрства - оранжевая */}
-                                    <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
-                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                        </svg>
+                                        {/* Категория */}
+                                        <div className="flex items-center justify-center gap-1.5 mb-2">
+                                            <span className="text-xs font-semibold text-gray-600">
+                                                {t.about.partners.categories[partner.categoryKey as keyof typeof t.about.partners.categories]}
+                                            </span>
+                                        </div>
+
+                                        {/* Галочка партнёрства - оранжевая */}
+                                        <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </Marquee>
+
+                        {/* Вторая карусель - справа налево (reverse) */}
+                        <Marquee reverse pauseOnHover className="[--duration:25s]">
+                            {secondRow.map((partner) => (
+                                <div
+                                    key={partner.id}
+                                    className="group relative mx-4"
+                                >
+                                    {/* Светящийся фон */}
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${partner.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 rounded-2xl`}></div>
+
+                                    <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent group-hover:border-gray-200 w-64 h-48">
+                                        {/* Логотип компании */}
+                                        <div className="w-full h-20 mb-3 flex items-center justify-center rounded-xl">
+                                            <Image
+                                                src={partner.logo}
+                                                alt={partner.name}
+                                                width={160}
+                                                height={80}
+                                                className={`object-contain group-hover:scale-110 transition-transform duration-300 ${partner.name === 'Orbis Auto' ? 'w-full h-full scale-110' : 'w-full h-full'
+                                                    }`}
+                                            />
+                                        </div>
+
+                                        {/* Название */}
+                                        <h4 className="text-lg font-bold text-gray-900 mb-2 text-center">
+                                            {partner.name}
+                                        </h4>
+
+                                        {/* Категория */}
+                                        <div className="flex items-center justify-center gap-1.5 mb-2">
+                                            <span className="text-xs font-semibold text-gray-600">
+                                                {t.about.partners.categories[partner.categoryKey as keyof typeof t.about.partners.categories]}
+                                            </span>
+                                        </div>
+
+                                        {/* Галочка партнёрства - оранжевая */}
+                                        <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </Marquee>
+
+                        {/* Градиенты по краям */}
+                        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-gray-50"></div>
+                        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-gray-50"></div>
                     </div>
 
                     {/*  блок снизу */}

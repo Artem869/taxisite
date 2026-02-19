@@ -8,9 +8,13 @@ import { useLanguage } from '@/contexts/LanguageContext'
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
+    const [isVisible, setIsVisible] = useState(false)
     const { language, setLanguage, t } = useLanguage()
 
     useEffect(() => {
+        // Анимация появления при загрузке
+        setIsVisible(true)
+
         const handleScroll = () => {
             setScrolled(window.scrollY > 50)
         }
@@ -25,8 +29,8 @@ export default function Header() {
     return (
         <>
             {/* Топ-бар с контактами */}
-            <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
-                }`}>
+            <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+                } ${isVisible ? 'opacity-100' : 'opacity-0 -translate-y-4'}`}>
                 <div className="bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 text-white py-2">
                     <div className="container mx-auto px-4 flex justify-between items-center text-sm">
                         <div className="flex items-center gap-6">
@@ -54,12 +58,13 @@ export default function Header() {
             </div>
 
             {/* Основная навигация */}
-            <header className={`fixed left-0 right-0 z-40 transition-all duration-500 ${scrolled ? 'top-0 bg-white shadow-2xl' : 'top-10 bg-white/95 backdrop-blur-md'
-                }`}>
+            <header className={`fixed left-0 right-0 z-40 transition-all duration-700 ${scrolled ? 'top-0 bg-white shadow-2xl' : 'top-10 bg-white/95 backdrop-blur-md'
+                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
                 <div className="container mx-auto px-4">
                     <nav className="flex items-center justify-between h-20">
                         {/* Логотип */}
-                        <Link href="/" className="flex flex-col items-center -gap-1 group">
+                        <Link href="/" className={`flex flex-col items-center -gap-1 group transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+                            }`}>
                             <div className="relative">
                                 <div className="absolute inset-0 bg-slate-900/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                                 <Image

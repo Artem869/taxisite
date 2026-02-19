@@ -319,16 +319,6 @@ export default function Reviews() {
                         </span>
                     </div>
                 </div>
-
-                {/* Статистика внизу */}
-                <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                    {t.reviews.stats.map((stat, idx) => (
-                        <div key={idx} className="text-center p-6 bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl border border-gray-200">
-                            <div className="text-4xl font-black text-slate-900 mb-2">{stat.value}</div>
-                            <div className="text-sm text-gray-600">{stat.label}</div>
-                        </div>
-                    ))}
-                </div>
             </div>
         </section>
     )

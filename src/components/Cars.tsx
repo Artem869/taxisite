@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -9,15 +9,37 @@ type CarType = 'monza' | 'seltos' | null
 export default function Cars() {
     const [selectedCar, setSelectedCar] = useState<CarType>(null)
     const { t } = useLanguage()
+    const [isVisible, setIsVisible] = useState(false)
+    const sectionRef = useRef<HTMLElement>(null)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true)
+                    }
+                })
+            },
+            { threshold: 0.1 }
+        )
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current)
+        }
+
+        return () => observer.disconnect()
+    }, [])
 
     const closeModal = () => setSelectedCar(null)
 
     return (
         <>
-            <section id="автомобили" className="py-20 bg-white">
+            <section ref={sectionRef} id="автомобили" className="py-20 bg-white">
                 <div className="container mx-auto px-4">
                     {/* Заголовок секции */}
-                    <div className="text-center mb-16">
+                    <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                        }`}>
                         <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-4">
                             {t.cars.title}
                         </h2>
@@ -29,7 +51,9 @@ export default function Cars() {
                     {/* Сетка автомобилей */}
                     <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {/* Chevrolet Monza */}
-                        <div className="group relative bg-white rounded-3xl overflow-hidden border-2 border-gray-200 hover:border-slate-400 transition-all duration-500 hover:shadow-2xl">
+                        <div className={`group relative bg-white rounded-3xl overflow-hidden border-2 border-gray-200 hover:border-slate-400 transition-all duration-500 hover:shadow-2xl ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            }`}
+                            style={{ transitionDelay: '200ms' }}>
                             {/* Область для фото */}
                             <div className="relative h-72 bg-gradient-to-br from-slate-50 to-gray-100 flex items-center justify-center p-4">
                                 <Image

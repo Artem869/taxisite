@@ -2,9 +2,16 @@
 
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useEffect, useState } from 'react'
 
 export default function Hero() {
     const { t } = useLanguage()
+    const [isVisible, setIsVisible] = useState(false)
+
+    useEffect(() => {
+        // Запускаем анимацию после монтирования компонента
+        setIsVisible(true)
+    }, [])
 
     const scrollToCars = () => {
         document.getElementById('автомобили')?.scrollIntoView({ behavior: 'smooth' })
@@ -22,9 +29,11 @@ export default function Hero() {
             <div className="container mx-auto px-4 py-32 relative z-10">
                 <div className="grid lg:grid-cols-12 gap-12 items-center">
                     {/* Левая часть */}
-                    <div className="lg:col-span-5 space-y-8">
+                    <div className={`lg:col-span-5 space-y-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+                        }`}>
                         {/* Бейдж */}
-                        <div className="inline-flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-full text-sm font-semibold border border-slate-200">
+                        <div className={`inline-flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-full text-sm font-semibold border border-slate-200 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
+                            }`} style={{ transitionDelay: '100ms' }}>
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-600"></span>
@@ -33,7 +42,8 @@ export default function Hero() {
                         </div>
 
                         {/* Заголовок */}
-                        <div className="space-y-4">
+                        <div className={`space-y-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            }`} style={{ transitionDelay: '200ms' }}>
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-orange-500">
                                 {t.hero.title}
                             </h1>
@@ -43,7 +53,8 @@ export default function Hero() {
                         </div>
 
                         {/* Преимущества */}
-                        <div className="grid grid-cols-2 gap-4 max-w-2xl">
+                        <div className={`grid grid-cols-2 gap-4 max-w-2xl transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            }`} style={{ transitionDelay: '400ms' }}>
                             <div className="bg-white/80 backdrop-blur-sm p-5 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
                                 <div className="text-3xl font-black text-slate-700 mb-1">{t.hero.stats.time}</div>
                                 <div className="text-sm text-gray-600 font-medium">{t.hero.stats.timeLabel}</div>
