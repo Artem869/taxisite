@@ -179,7 +179,7 @@ export default function Reviews() {
                         </svg>
                         <span>{t.reviews.badge}</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+                    <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-4">
                         {t.reviews.title}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">

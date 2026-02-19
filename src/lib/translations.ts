@@ -31,11 +31,9 @@ export const translations = {
                 time: '2 мин',
                 timeLabel: 'решение',
                 approval: '90%',
-                approvalLabel: 'одобрение',
+                approvalLabel: 'уровень одобрения',
                 delivery: '30 мин',
-                deliveryLabel: 'выдача',
-                payment: '0₸',
-                paymentLabel: 'комиссия'
+                deliveryLabel: 'выдача'
             },
             cta1: 'Подать заявку',
             cta2: 'Выбрать авто'
@@ -44,7 +42,7 @@ export const translations = {
         // Cars
         cars: {
             title: 'Автомобили',
-            subtitle: 'Выберите автомобиль по душе',
+            subtitle: 'Выберите авто по душе',
             perDay: 'день',
             detailsButton: 'Подробнее',
             photoPlaceholder: 'Место для фото',
@@ -124,7 +122,7 @@ export const translations = {
             cta: {
                 title: 'Готовы начать?',
                 subtitle: 'Подайте заявку прямо сейчас',
-                button: 'Подать заявку в WhatsApp'
+                button: 'Подать заявку'
             }
         },
 
@@ -333,11 +331,9 @@ export const translations = {
                 time: '2 мин',
                 timeLabel: 'шешім',
                 approval: '90%',
-                approvalLabel: 'мақұлдау',
+                approvalLabel: 'мақұлдау деңгейі',
                 delivery: '30 мин',
-                deliveryLabel: 'беру',
-                payment: '0₸',
-                paymentLabel: 'комиссия'
+                deliveryLabel: 'беру'
             },
             cta1: 'Өтінім жіберу',
             cta2: 'Автокөлік таңдау'

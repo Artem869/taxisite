@@ -34,11 +34,8 @@ export default function Hero() {
 
                         {/* Заголовок */}
                         <div className="space-y-4">
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
-                                <span className="block text-gray-900">{t.hero.title.split(' ')[0]} {t.hero.title.split(' ')[1]}</span>
-                                <span className="block bg-gradient-to-r from-slate-700 via-slate-600 to-gray-700 bg-clip-text text-transparent">
-                                    {t.hero.title.split(' ')[2]}
-                                </span>
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-orange-500">
+                                {t.hero.title}
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-600 font-medium max-w-xl">
                                 {t.hero.subtitle}
@@ -58,10 +55,6 @@ export default function Hero() {
                             <div className="bg-white/80 backdrop-blur-sm p-5 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
                                 <div className="text-3xl font-black text-slate-700 mb-1">{t.hero.stats.delivery}</div>
                                 <div className="text-sm text-gray-600 font-medium">{t.hero.stats.deliveryLabel}</div>
-                            </div>
-                            <div className="bg-white/80 backdrop-blur-sm p-5 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                                <div className="text-3xl font-black text-slate-700 mb-1">{t.hero.stats.payment}</div>
-                                <div className="text-sm text-gray-600 font-medium">{t.hero.stats.paymentLabel}</div>
                             </div>
                         </div>
 

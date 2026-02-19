@@ -16,11 +16,11 @@ export default function FAQ() {
             <div className="relative max-w-4xl mx-auto px-6">
                 {/* Заголовок */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 bg-slate-100 rounded-full px-5 py-2 mb-6">
-                        <span className="text-slate-700 font-medium text-sm">{t.faq.badge}</span>
+                    <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-100 rounded-full px-5 py-2 mb-6">
+                        <span className="text-orange-600 font-bold text-sm">{t.faq.badge}</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                    <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-4">
                         {t.faq.title}
                     </h2>
                     <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -31,13 +31,13 @@ export default function FAQ() {
                 {/* Простой список вопросов */}
                 <div className="space-y-3 mb-12">
                     {t.faq.questions.map((faq, index) => (
-                        <div key={index} className="border border-slate-200 rounded-xl overflow-hidden bg-white hover:border-slate-300 transition-colors">
+                        <div key={index} className="border border-slate-200 rounded-xl overflow-hidden bg-white hover:border-orange-200 transition-colors">
                             <button
                                 onClick={() => toggleQuestion(index)}
-                                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
+                                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-orange-50/30 transition-colors"
                             >
                                 <div className="flex items-center gap-4 flex-1">
-                                    <span className="flex-shrink-0 w-8 h-8 bg-slate-900 text-white rounded-lg flex items-center justify-center text-sm font-bold">
+                                    <span className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-slate-800 to-slate-900 group-hover:from-orange-500 group-hover:to-orange-600 text-white rounded-lg flex items-center justify-center text-sm font-bold transition-all duration-300">
                                         {index + 1}
                                     </span>
                                     <h3 className="text-lg font-semibold text-slate-900">
@@ -46,7 +46,7 @@ export default function FAQ() {
                                 </div>
 
                                 <svg
-                                    className={`w-6 h-6 text-slate-400 transition-transform duration-300 flex-shrink-0 ${openQuestion === index ? 'rotate-180' : ''
+                                    className={`w-6 h-6 text-slate-400 group-hover:text-orange-500 transition-all duration-300 flex-shrink-0 ${openQuestion === index ? 'rotate-180' : ''
                                         }`}
                                     fill="none"
                                     stroke="currentColor"

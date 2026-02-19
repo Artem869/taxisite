@@ -18,7 +18,7 @@ export default function Cars() {
                 <div className="container mx-auto px-4">
                     {/* Заголовок секции */}
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+                        <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-4">
                             {t.cars.title}
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -92,7 +92,7 @@ export default function Cars() {
                                 {/* Кнопка */}
                                 <button
                                     onClick={() => setSelectedCar('monza')}
-                                    className="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center py-3.5 rounded-xl font-bold transition-all duration-300 hover:shadow-lg"
+                                    className="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-3.5 rounded-xl font-bold transition-all duration-300 hover:shadow-lg"
                                 >
                                     {t.cars.detailsButton}
                                 </button>
@@ -163,7 +163,7 @@ export default function Cars() {
                                 {/* Кнопка */}
                                 <button
                                     onClick={() => setSelectedCar('seltos')}
-                                    className="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center py-3.5 rounded-xl font-bold transition-all duration-300 hover:shadow-lg"
+                                    className="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-3.5 rounded-xl font-bold transition-all duration-300 hover:shadow-lg"
                                 >
                                     {t.cars.detailsButton}
                                 </button>

@@ -28,8 +28,8 @@ export default function Conditions() {
             <div className="relative max-w-7xl mx-auto px-6">
                 {/* Заголовок секции */}
                 <div className="text-center mb-16">
-                    <div className="inline-block px-4 py-2 bg-slate-100 rounded-full mb-4">
-                        <span className="text-sm font-bold text-slate-700 uppercase tracking-wider">
+                    <div className="inline-block px-4 py-2 bg-orange-50 rounded-full mb-4 border border-orange-100">
+                        <span className="text-sm font-bold text-orange-600 uppercase tracking-wider">
                             {t.conditions.badge}
                         </span>
                     </div>
@@ -47,7 +47,7 @@ export default function Conditions() {
                     {t.conditions.items.map((item, index) => (
                         <div
                             key={index}
-                            className="group bg-white border-2 border-slate-200 hover:border-slate-400 p-8 transition-all duration-300 hover:shadow-xl"
+                            className="group bg-white border-2 border-slate-200 hover:border-orange-300 p-8 transition-all duration-300 hover:shadow-xl"
                         >
                             {/* Иконка и номер */}
                             <div className="flex items-center justify-between mb-6">

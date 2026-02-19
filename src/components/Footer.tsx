@@ -22,13 +22,13 @@ export default function Footer() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         {/* Левая часть - CTA */}
                         <div>
-                            <div className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-medium mb-6">
+                            <div className="inline-block px-4 py-2 bg-orange-500/20 border border-orange-400/30 rounded-full text-sm font-bold mb-6 text-orange-300">
                                 {language === 'ru' ? '🚗 Готовы к переменам?' : '🚗 Өзгерістерге дайынсыз ба?'}
                             </div>
-                            <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                            <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                                 {language === 'ru' ? 'Получите свой автомобиль' : 'Өз автомобиліңізді алыңыз'}
                                 <br />
-                                <span className="text-slate-400">{language === 'ru' ? 'уже сегодня' : 'бүгін'}</span>
+                                <span className="text-orange-400">{language === 'ru' ? 'уже сегодня' : 'бүгін'}</span>
                             </h2>
                             <p className="text-xl text-slate-400 mb-8">
                                 {t.footer.description}

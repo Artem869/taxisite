@@ -59,7 +59,7 @@ export default function Header() {
                 <div className="container mx-auto px-4">
                     <nav className="flex items-center justify-between h-20">
                         {/* Логотип */}
-                        <Link href="/" className="flex flex-col items-center gap-1 group">
+                        <Link href="/" className="flex flex-col items-center -gap-1 group">
                             <div className="relative">
                                 <div className="absolute inset-0 bg-slate-900/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                                 <Image
@@ -71,34 +71,34 @@ export default function Header() {
                                     priority
                                 />
                             </div>
-                            <p className="text-xs text-gray-600 font-semibold">{t.footer.tagline}</p>
+                            <p className="text-xs text-gray-600 font-semibold -mt-2">{t.footer.tagline}</p>
                         </Link>
 
                         {/* Десктоп меню */}
                         <div className="hidden lg:flex items-center gap-1">
-                            <Link href="#условия" className="px-4 py-2 text-gray-700 hover:text-slate-900 font-medium transition-colors relative group">
+                            <Link href="#условия" className="px-4 py-2 text-gray-700 hover:text-orange-600 font-medium transition-colors relative group">
                                 {t.header.menu.conditions}
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-800 group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-300"></span>
                             </Link>
-                            <Link href="#автомобили" className="px-4 py-2 text-gray-700 hover:text-slate-900 font-medium transition-colors relative group">
+                            <Link href="#автомобили" className="px-4 py-2 text-gray-700 hover:text-orange-600 font-medium transition-colors relative group">
                                 {t.header.menu.cars}
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-800 group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-300"></span>
                             </Link>
-                            <Link href="#вопросы" className="px-4 py-2 text-gray-700 hover:text-slate-900 font-medium transition-colors relative group">
+                            <Link href="#вопросы" className="px-4 py-2 text-gray-700 hover:text-orange-600 font-medium transition-colors relative group">
                                 {t.header.menu.questions}
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-800 group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-300"></span>
                             </Link>
-                            <Link href="#о-компании" className="px-4 py-2 text-gray-700 hover:text-slate-900 font-medium transition-colors relative group">
+                            <Link href="#о-компании" className="px-4 py-2 text-gray-700 hover:text-orange-600 font-medium transition-colors relative group">
                                 {t.header.menu.about}
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-800 group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-300"></span>
                             </Link>
-                            <Link href="#отзывы" className="px-4 py-2 text-gray-700 hover:text-slate-900 font-medium transition-colors relative group">
+                            <Link href="#отзывы" className="px-4 py-2 text-gray-700 hover:text-orange-600 font-medium transition-colors relative group">
                                 {t.header.menu.reviews}
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-800 group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-300"></span>
                             </Link>
-                            <Link href="#контакты" className="px-4 py-2 text-gray-700 hover:text-slate-900 font-medium transition-colors relative group">
+                            <Link href="#контакты" className="px-4 py-2 text-gray-700 hover:text-orange-600 font-medium transition-colors relative group">
                                 {t.header.menu.contacts}
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-800 group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-300"></span>
                             </Link>
                         </div>
 
@@ -139,18 +139,18 @@ export default function Header() {
                             <Link
                                 href="#условия"
                                 onClick={() => setIsMenuOpen(false)}
-                                className="flex items-center gap-4 px-4 py-4 bg-gradient-to-r from-slate-50 to-white hover:from-slate-100 hover:to-slate-50 rounded-2xl font-medium transition-all duration-300 border border-slate-200 hover:border-slate-300 hover:shadow-md group"
+                                className="flex items-center gap-4 px-4 py-4 bg-gradient-to-r from-slate-50 to-white hover:from-orange-50 hover:to-white rounded-2xl font-medium transition-all duration-300 border border-slate-200 hover:border-orange-300 hover:shadow-md group"
                             >
-                                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-                                    <svg className="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow group-hover:bg-orange-50">
+                                    <svg className="w-6 h-6 text-slate-700 group-hover:text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                     </svg>
                                 </div>
                                 <div className="flex-1">
-                                    <div className="text-slate-900 font-semibold">{t.header.menu.conditions}</div>
+                                    <div className="text-slate-900 font-semibold group-hover:text-orange-600">{t.header.menu.conditions}</div>
                                     <div className="text-xs text-slate-500">{language === 'ru' ? 'Простые условия' : 'Қарапайым шарттар'}</div>
                                 </div>
-                                <svg className="w-5 h-5 text-slate-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5 text-slate-400 group-hover:text-orange-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
                             </Link>
@@ -158,18 +158,18 @@ export default function Header() {
                             <Link
                                 href="#автомобили"
                                 onClick={() => setIsMenuOpen(false)}
-                                className="flex items-center gap-4 px-4 py-4 bg-gradient-to-r from-slate-50 to-white hover:from-slate-100 hover:to-slate-50 rounded-2xl font-medium transition-all duration-300 border border-slate-200 hover:border-slate-300 hover:shadow-md group"
+                                className="flex items-center gap-4 px-4 py-4 bg-gradient-to-r from-slate-50 to-white hover:from-orange-50 hover:to-white rounded-2xl font-medium transition-all duration-300 border border-slate-200 hover:border-orange-300 hover:shadow-md group"
                             >
-                                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-                                    <svg className="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow group-hover:bg-orange-50">
+                                    <svg className="w-6 h-6 text-slate-700 group-hover:text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                     </svg>
                                 </div>
                                 <div className="flex-1">
-                                    <div className="text-slate-900 font-semibold">{t.header.menu.cars}</div>
+                                    <div className="text-slate-900 font-semibold group-hover:text-orange-600">{t.header.menu.cars}</div>
                                     <div className="text-xs text-slate-500">{language === 'ru' ? 'Наши модели' : 'Біздің модельдер'}</div>
                                 </div>
-                                <svg className="w-5 h-5 text-slate-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5 text-slate-400 group-hover:text-orange-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
                             </Link>
@@ -177,7 +177,7 @@ export default function Header() {
                             <Link
                                 href="#вопросы"
                                 onClick={() => setIsMenuOpen(false)}
-                                className="flex items-center gap-4 px-4 py-4 bg-gradient-to-r from-slate-50 to-white hover:from-slate-100 hover:to-slate-50 rounded-2xl font-medium transition-all duration-300 border border-slate-200 hover:border-slate-300 hover:shadow-md group"
+                                className="flex items-center gap-4 px-4 py-4 bg-gradient-to-r from-slate-50 to-white hover:from-orange-50 hover:to-white rounded-2xl font-medium transition-all duration-300 border border-slate-200 hover:border-orange-300 hover:shadow-md group"
                             >
                                 <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
                                     <svg className="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
