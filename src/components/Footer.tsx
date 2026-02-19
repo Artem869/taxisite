@@ -17,18 +17,18 @@ export default function Footer() {
             </div>
 
             <div className="relative max-w-7xl mx-auto px-6 py-20">
-                {/* Верхняя часть - крупный заголовок и контакты */}
+                {/* Верхняя часть  */}
                 <div className="mb-20">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         {/* Левая часть - CTA */}
                         <div>
-                            <div className="inline-block px-4 py-2 bg-orange-500/20 border border-orange-400/30 rounded-full text-sm font-bold mb-6 text-orange-300">
+                            <div className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-medium mb-6">
                                 {language === 'ru' ? '🚗 Готовы к переменам?' : '🚗 Өзгерістерге дайынсыз ба?'}
                             </div>
-                            <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-orange-400">
+                            <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
                                 {language === 'ru' ? 'Получите свой автомобиль' : 'Өз автомобиліңізді алыңыз'}
                                 <br />
-                                {language === 'ru' ? 'уже сегодня' : 'бүгін'}
+                                <span className="text-slate-400">{language === 'ru' ? 'уже сегодня' : 'бүгін'}</span>
                             </h2>
                             <p className="text-xl text-slate-400 mb-8">
                                 {t.footer.description}
@@ -169,7 +169,7 @@ export default function Footer() {
                     <div className="md:col-span-2">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1.5">
-                                <Image src="/logo.webp" alt="Ridera" width={40} height={40} className="w-full h-full object-contain" />
+                                <img src="/logo.webp" alt="Ridera" className="w-full h-full object-contain" />
                             </div>
                             <div>
                                 <div className="text-xl font-bold">Ridera</div>
