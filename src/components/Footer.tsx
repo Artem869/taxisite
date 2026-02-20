@@ -63,7 +63,7 @@ export default function Footer() {
                                     className="w-14 h-14 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center transition-all hover:scale-110 overflow-hidden"
                                 >
                                     <Image
-                                        src="/photo/2gg.png"
+                                        src="/photo/2g2.jpg"
                                         alt="2GIS"
                                         width={56}
                                         height={56}
@@ -139,7 +139,7 @@ export default function Footer() {
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center overflow-hidden">
                                             <Image
-                                                src="/photo/2gg.png"
+                                                src="/photo/2g2.jpg"
                                                 alt="2GIS"
                                                 width={48}
                                                 height={48}
