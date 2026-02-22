@@ -31,13 +31,13 @@ export default function FAQ() {
                 {/* Простой список вопросов */}
                 <div className="space-y-3 mb-12">
                     {t.faq.questions.map((faq, index) => (
-                        <div key={index} className="border border-slate-200 rounded-xl overflow-hidden bg-white hover:border-orange-200 transition-colors">
+                        <div key={index} className={`group border rounded-xl overflow-hidden bg-white transition-all duration-300 ${openQuestion === index ? 'border-orange-500 shadow-lg shadow-orange-100' : 'border-slate-200 hover:border-orange-300'}`}>
                             <button
                                 onClick={() => toggleQuestion(index)}
                                 className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-orange-50/30 transition-colors"
                             >
                                 <div className="flex items-center gap-4 flex-1">
-                                    <span className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-slate-800 to-slate-900 group-hover:from-orange-500 group-hover:to-orange-600 text-white rounded-lg flex items-center justify-center text-sm font-bold transition-all duration-300">
+                                    <span className={`flex-shrink-0 w-8 h-8 text-white rounded-lg flex items-center justify-center text-sm font-bold transition-all duration-300 ${openQuestion === index ? 'bg-gradient-to-br from-orange-500 to-orange-600' : 'bg-gradient-to-br from-slate-800 to-slate-900 group-hover:from-orange-500 group-hover:to-orange-600'}`}>
                                         {index + 1}
                                     </span>
                                     <h3 className="text-lg font-semibold text-slate-900">
@@ -46,7 +46,7 @@ export default function FAQ() {
                                 </div>
 
                                 <svg
-                                    className={`w-6 h-6 text-slate-400 group-hover:text-orange-500 transition-all duration-300 flex-shrink-0 ${openQuestion === index ? 'rotate-180' : ''
+                                    className={`w-6 h-6 transition-all duration-300 flex-shrink-0 ${openQuestion === index ? 'rotate-180 text-orange-500' : 'text-slate-400'
                                         }`}
                                     fill="none"
                                     stroke="currentColor"
@@ -60,8 +60,9 @@ export default function FAQ() {
                                 className={`overflow-hidden transition-all duration-300 ${openQuestion === index ? 'max-h-96' : 'max-h-0'
                                     }`}
                             >
-                                <div className="px-6 pb-5 pl-18">
-                                    <p className="text-slate-700 text-lg leading-relaxed">
+                                <div className="px-6 pb-5 pl-6 relative">
+                                    <div className="absolute left-6 top-0 bottom-4 w-0.5 bg-orange-500"></div>
+                                    <p className="text-slate-700 text-lg leading-relaxed pl-6">
                                         {faq.a}
                                     </p>
                                 </div>

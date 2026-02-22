@@ -37,6 +37,27 @@ export default function Cars() {
         return () => observer.disconnect()
     }, [])
 
+    // Блокировка прокрутки страницы при открытой галерее
+    useEffect(() => {
+        if (selectedImage !== null) {
+            // Сохраняем текущую позицию прокрутки
+            const scrollY = window.scrollY
+            document.body.style.position = 'fixed'
+            document.body.style.top = `-${scrollY}px`
+            document.body.style.width = '100%'
+            document.body.style.overflow = 'hidden'
+
+            return () => {
+                // Восстанавливаем прокрутку при закрытии
+                document.body.style.position = ''
+                document.body.style.top = ''
+                document.body.style.width = ''
+                document.body.style.overflow = ''
+                window.scrollTo(0, scrollY)
+            }
+        }
+    }, [selectedImage])
+
     const closeModal = () => setSelectedCar(null)
 
     const openImage = (index: number) => setSelectedImage(index)
@@ -173,7 +194,7 @@ export default function Cars() {
                             {/* Область для фото */}
                             <div className="relative h-72 bg-gradient-to-br from-slate-50 to-gray-100 flex items-center justify-center p-4">
                                 <Image
-                                    src="/kiaseltos.webp"
+                                    src="/cars/seltos/seltosneww.png"
                                     alt="Kia Seltos"
                                     width={600}
                                     height={400}
@@ -181,7 +202,7 @@ export default function Cars() {
                                     quality={85}
                                     placeholder="blur"
                                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-                                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                                    className="w-full h-full object-contain group-hover:scale-[1.24] transition-transform duration-500 scale-[1.19]"
                                 />
                             </div>
 
