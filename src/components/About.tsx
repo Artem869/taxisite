@@ -275,8 +275,8 @@ export default function About() {
                                             <Image
                                                 src={partner.logo}
                                                 alt={partner.name}
-                                                width={120}
-                                                height={80}
+                                                width={partner.name === 'Яндекс' ? 80 : partner.name === 'InDrive' ? 100 : partner.name === 'Freedom Insurance' ? 290 : partner.name === 'MG' || partner.name === 'Kaiya' ? 70 : 120}
+                                                height={partner.name === 'Яндекс' ? 53 : partner.name === 'InDrive' ? 67 : partner.name === 'Freedom Insurance' ? 110 : partner.name === 'MG' || partner.name === 'Kaiya' ? 47 : 80}
 
                                             />
                                         </div>
@@ -320,9 +320,11 @@ export default function About() {
                                             <Image
                                                 src={partner.logo}
                                                 alt={partner.name}
-                                                width={160}
-                                                height={80}
-                                                className={`object-contain group-hover:scale-110 transition-transform duration-300 ${partner.name === 'Orbis Auto' ? 'w-full h-full scale-110' : 'w-full h-full'
+                                                width={partner.name === 'Яндекс' ? 80 : partner.name === 'InDrive' ? 100 : partner.name === 'Freedom Insurance' ? 180 : partner.name === 'MG' || partner.name === 'Kaiya' ? 99 : 160}
+                                                height={partner.name === 'Яндекс' ? 53 : partner.name === 'InDrive' ? 67 : partner.name === 'Freedom Insurance' ? 120 : partner.name === 'MG' || partner.name === 'Kaiya' ? 77 : 80}
+                                                className={`object-contain group-hover:scale-110 transition-transform duration-300 ${partner.name === 'Orbis Auto' ? 'w-full h-full scale-110' :
+                                                    partner.name === 'MG' || partner.name === 'Kaiya' ? '' :
+                                                        'w-full h-full'
                                                     }`}
                                             />
                                         </div>

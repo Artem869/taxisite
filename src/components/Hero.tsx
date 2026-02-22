@@ -74,7 +74,7 @@ export default function Hero() {
                             <p className="text-white font-bold text-lg mb-3">
                                 {t.hero.usp}
                             </p>
-                            <ul className="space-y-2 text-gray-300">
+                            <div className="space-y-2 text-gray-300">
                                 <li className="flex items-center gap-2">
                                     <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -87,7 +87,7 @@ export default function Hero() {
                                     </svg>
                                     <span>{t.hero.features.feature2}</span>
                                 </li>
-                            </ul>
+                            </div>
                         </div>
 
                         {/* Кнопки CTA */}

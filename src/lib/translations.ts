@@ -89,7 +89,8 @@ export const translations = {
                 transmission: 'Коробка передач',
                 equipment: 'Комплектация',
                 book: 'Забронировать',
-                whatsappMessage: 'Здравствуйте! Хочу забронировать'
+                whatsappMessage: 'Здравствуйте! Хочу получить информацию об',
+                submitButton: 'Подать заявку'
             }
         },
 
@@ -312,7 +313,7 @@ export const translations = {
                 reviews: 'Пікірлер',
                 contacts: 'Байланыс'
             },
-            cta: 'Өтінім жіберу'
+            cta: 'Өтінім беру'
         },
 
         // Hero
@@ -335,7 +336,7 @@ export const translations = {
                 delivery: '30 мин',
                 deliveryLabel: 'беру'
             },
-            cta1: 'Өтінім жіберу',
+            cta1: 'Өтінім беру',
             cta2: 'Автокөлік таңдау'
         },
 
@@ -389,7 +390,8 @@ export const translations = {
                 transmission: 'Беріліс қорабы',
                 equipment: 'Жабдық',
                 book: 'Брондау',
-                whatsappMessage: 'Сәлеметсіз бе! Брондағым келеді'
+                whatsappMessage: 'Сәлеметсіз бе! Мына көлік туралы ақпарат алғым келеді:',
+                submitButton: 'Өтінім беру'
             }
         },
 
@@ -421,8 +423,8 @@ export const translations = {
             ],
             cta: {
                 title: 'Бастауға дайынсыз ба?',
-                subtitle: 'Қазір өтінім жіберіңіз',
-                button: 'WhatsApp-қа өтінім жіберу'
+                subtitle: 'Қазір өтінім беріңіз',
+                button: 'WhatsApp-қа өтінім беру'
             }
         },
 
