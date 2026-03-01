@@ -28,92 +28,79 @@ export default function Advantages() {
     }, [])
 
     return (
-        <section ref={sectionRef} className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50">
+        <section ref={sectionRef} className="py-32 bg-gradient-to-b from-white via-orange-50/30 to-white">
             <div className="container mx-auto px-4">
-                {/* Заголовок */}
-                <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">
-                        {t.advantages.title}
-                    </h2>
-                    <p className="text-slate-600 text-lg">
-                        {t.advantages.subtitle}
-                    </p>
-                </div>
+                <div className={`max-w-7xl mx-auto transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
 
-                {/* Таблица сравнений */}
-                <div className={`max-w-4xl mx-auto mb-16 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
-                        {/* Заголовки таблицы */}
-                        <div className="grid grid-cols-2">
-                            <div className="py-5 px-6 text-center font-bold bg-slate-800 text-white border-r border-slate-700">
-                                Другие
-                            </div>
-                            <div className="py-5 px-6 text-center font-bold bg-gradient-to-r from-orange-500 to-orange-600 text-white">
-                                Ridera
-                            </div>
-                        </div>
+                    {/* Заголовок */}
+                    <div className="mb-24 text-center">
+                        <h2 className="text-5xl md:text-7xl font-black text-slate-900 mb-6">
+                            {t.advantages.title}
+                        </h2>
+                        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                            {t.advantages.subtitle}
+                        </p>
+                    </div>
 
-                        {/* Строки сравнений */}
+                    {/* Преимущества - стильные блоки */}
+                    <div className="space-y-8">
                         {t.advantages.comparisons.map((item, index) => (
                             <div
                                 key={index}
-                                className={`grid grid-cols-2 ${index !== t.advantages.comparisons.length - 1 ? 'border-b border-gray-200' : ''
-                                    }`}
+                                className="group relative"
                             >
-                                {/* Конкурент */}
-                                <div className="py-6 px-6 flex items-center gap-4 border-r border-gray-200 bg-slate-50">
-                                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <div className="text-xs text-slate-500 mb-1">{item.competitor}</div>
-                                        <div className="text-slate-700 font-medium">{item.competitorFeature}</div>
-                                    </div>
-                                </div>
+                                <div className="flex flex-col md:flex-row gap-0 bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
 
-                                {/* Ridera */}
-                                <div className="py-6 px-6 flex items-center gap-4 bg-white">
-                                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center shadow-lg">
-                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
+                                    {/* Левая часть - яркий блок с номером */}
+                                    <div className="md:w-80 bg-gradient-to-br from-orange-500 to-orange-600 p-10 flex flex-col justify-center relative overflow-hidden">
+                                        <div className="absolute right-4 -top-10 text-[180px] font-black text-white/10">
+                                            {index + 1}
+                                        </div>
+                                        <div className="relative z-10">
+                                            <div className="text-7xl font-black text-white mb-4 leading-none">
+                                                {String(index + 1).padStart(2, '0')}
+                                            </div>
+                                            <h3 className="text-2xl font-black text-white leading-tight">
+                                                {item.competitor}
+                                            </h3>
+                                        </div>
                                     </div>
-                                    <div className="text-slate-900 font-bold text-lg">{item.rideraFeature}</div>
+
+                                    {/* Правая часть - сравнение */}
+                                    <div className="flex-1 p-10">
+                                        <div className="grid md:grid-cols-2 gap-8 h-full">
+                                            {/* Другие */}
+                                            <div className="flex flex-col">
+                                                <div className="flex items-center gap-3 mb-4">
+                                                    <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+                                                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
+                                                        Другие компании
+                                                    </span>
+                                                </div>
+                                                <p className="text-lg text-gray-600 leading-relaxed flex-1">
+                                                    {item.competitorFeature}
+                                                </p>
+                                            </div>
+
+                                            {/* Ridera */}
+                                            <div className="flex flex-col relative">
+                                                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500 to-orange-300"></div>
+                                                <div className="flex items-center gap-3 mb-4">
+                                                    <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                                                    <span className="text-xs font-bold text-orange-500 uppercase tracking-widest">
+                                                        Ridera
+                                                    </span>
+                                                </div>
+                                                <p className="text-lg text-slate-900 font-bold leading-relaxed flex-1">
+                                                    {item.rideraFeature}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-                </div>
-
-                {/* CTA */}
-                <div className="text-center">
-                    <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-3">
-                        {t.advantages.cta.title}
-                    </h3>
-                    <p className="text-slate-600 mb-6">
-                        {t.advantages.cta.subtitle}
-                    </p>
-                    <a
-                        href="https://wa.me/77750426945?text=Здравствуйте!%20Хочу%20узнать%20про%20авто%20в%20Ridera."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden"
-                    >
-                        {/* Анимированный фон */}
-                        <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-
-                        <svg className="w-6 h-6 relative z-10 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                        </svg>
-                        <span className="relative z-10">{t.advantages.cta.button}</span>
-
-                        {/* Пульсирующее кольцо */}
-                        <div className="absolute inset-0 border-2 border-white/50 rounded-xl animate-ping opacity-0 group-hover:opacity-100"></div>
-                    </a>
                 </div>
             </div>
         </section>

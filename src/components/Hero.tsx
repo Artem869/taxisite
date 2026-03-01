@@ -70,19 +70,19 @@ export default function Hero() {
                         </div>
 
                         {/* Уникальное предложение */}
-                        <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-6 rounded-2xl shadow-2xl">
-                            <p className="text-white font-bold text-lg mb-3">
+                        <div className="bg-white border-2 border-slate-200 p-6 rounded-2xl shadow-lg">
+                            <p className="text-slate-900 font-bold text-lg mb-3">
                                 {t.hero.usp}
                             </p>
-                            <div className="space-y-2 text-gray-300">
+                            <div className="space-y-2 text-gray-600">
                                 <li className="flex items-center gap-2">
-                                    <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                     </svg>
                                     <span>{t.hero.features.feature1}</span>
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                     </svg>
                                     <span>{t.hero.features.feature2}</span>

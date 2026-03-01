@@ -164,7 +164,6 @@ export default function Cars() {
                                         <h3 className="text-2xl font-black text-gray-900 mb-1">
                                             {t.cars.monza.name}
                                         </h3>
-                                        <p className="text-sm text-gray-500">Chevrolet Monza</p>
                                     </div>
                                     <div className="text-right">
                                         <div className="text-3xl font-black text-slate-900">{t.cars.monza.price}</div>
@@ -235,7 +234,6 @@ export default function Cars() {
                                         <h3 className="text-2xl font-black text-gray-900 mb-1">
                                             {t.cars.seltos.name}
                                         </h3>
-                                        <p className="text-sm text-gray-500">Kia Seltos</p>
                                     </div>
                                     <div className="text-right">
                                         <div className="text-3xl font-black text-slate-900">{t.cars.seltos.price}</div>
