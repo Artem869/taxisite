@@ -127,16 +127,17 @@ export default function Hero() {
                             {/* Декоративный фон */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-slate-200/30 to-slate-300/20 rounded-full blur-3xl"></div>
 
-                            {/* Изображение Киа */}
-                            <div className="relative z-10 w-full">
-                                <Image
-                                    src="/kiaseltos.webp"
-                                    alt="Kia Seltos"
-                                    width={1000}
-                                    height={800}
-                                    className="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-                                    priority
-                                />
+                            {/* Изображение */}
+                            <div className="relative z-10 w-full max-w-2xl">
+                                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                                    <Image
+                                        src="/unnamed.webp"
+                                        alt="Ridera Car"
+                                        fill
+                                        className="object-cover hover:scale-[1.02] transition-transform duration-700"
+                                        priority
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>

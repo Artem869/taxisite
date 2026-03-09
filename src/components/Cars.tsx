@@ -152,7 +152,7 @@ export default function Cars() {
                                     quality={85}
                                     placeholder="blur"
                                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-                                    className="w-full h-full object-contain group-hover:scale-110 md:group-hover:scale-105 transition-transform duration-500"
+                                    className="w-full h-full object-contain scale-100 md:scale-105 group-hover:scale-105 md:group-hover:scale-110 transition-transform duration-500"
                                 />
                             </div>
 
@@ -223,7 +223,7 @@ export default function Cars() {
                                     quality={85}
                                     placeholder="blur"
                                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-                                    className="w-full h-full object-contain group-hover:scale-[1.18] transition-transform duration-500 scale-[1.12] md:scale-[1.22] md:group-hover:scale-[1.30]"
+                                    className="w-full h-full object-contain scale-95 md:scale-[1.28] group-hover:scale-100 md:group-hover:scale-[1.35] transition-transform duration-500"
                                 />
                             </div>
 
