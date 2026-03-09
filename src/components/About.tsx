@@ -201,7 +201,7 @@ export default function About() {
                                     </svg>
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.about.mission.goal}</h3>
-                                <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                                <p className="text-gray-600 text-lg leading-relaxed mb-6 whitespace-pre-line">
                                     {t.about.mission.goalText}
                                 </p>
                                 <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border border-orange-200">

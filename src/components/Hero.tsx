@@ -96,7 +96,7 @@ export default function Hero() {
                                 href="https://wa.me/77750426945?text=Здравствуйте!%20Хочу%20узнать%20про%20авто%20в%20Ridera."
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden"
+                                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden"
                             >
                                 {/* Анимированный фон */}
                                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>

@@ -113,7 +113,7 @@ export default function Header() {
                                 href={`https://wa.me/77750426945?text=${encodeURIComponent(language === 'ru' ? 'Здравствуйте! Хочу узнать про авто в Ridera.' : 'Сәлеметсіз бе! Ridera-дағы автомобиль туралы білгім келеді.')}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden"
+                                className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden"
                             >
                                 {/* Анимированный фон */}
                                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>

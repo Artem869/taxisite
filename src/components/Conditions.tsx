@@ -76,8 +76,8 @@ export default function Conditions() {
                             key={index}
                             ref={(el) => { cardsRef.current[index] = el }}
                             className={`group bg-white border-2 p-8 transition-all duration-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] hover:-translate-y-2 ${visibleCards.includes(index)
-                                    ? 'opacity-100 translate-y-0 border-orange-300 shadow-[0_0_30px_rgba(249,115,22,0.3)] animate-[borderFade_1s_ease-out_forwards]'
-                                    : 'opacity-0 translate-y-8 border-slate-200'
+                                ? 'opacity-100 translate-y-0 border-orange-300 shadow-[0_0_30px_rgba(249,115,22,0.3)] animate-[borderFade_1s_ease-out_forwards]'
+                                : 'opacity-0 translate-y-8 border-slate-200'
                                 } hover:border-orange-300`}
                         >
                             {/* Иконка и номер */}
@@ -153,10 +153,10 @@ export default function Conditions() {
                 {/* CTA кнопка */}
                 <div className="text-center">
                     <a
-                        href={`https://wa.me/77750426945?text=${encodeURIComponent(t.conditions.cta)}`}
+                        href={`https://wa.me/77750426945?text=${encodeURIComponent(t.conditions.ctaMessage)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold text-lg px-10 py-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105"
+                        className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-lg px-10 py-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105"
                     >
                         {/* Анимированный фон */}
                         <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
