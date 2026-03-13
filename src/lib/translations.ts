@@ -6,7 +6,7 @@ export const translations = {
             address: 'г. Алматы, ул. Мусабаева 36',
             menu: {
                 conditions: 'Условия',
-                cars: 'Автомобили',
+                cars: 'Каталог авто',
                 questions: 'Вопросы',
                 about: 'О компании',
                 reviews: 'Отзывы',
@@ -41,8 +41,8 @@ export const translations = {
 
         // Cars
         cars: {
-            title: 'Автомобили',
-            subtitle: 'Выберите авто по душе',
+            title: 'Каталог авто',
+            subtitle: 'Выберите машину по душе',
             perDay: 'день',
             detailsButton: 'Подробнее',
             photoPlaceholder: 'Место для фото',
@@ -166,7 +166,7 @@ export const translations = {
         // About
         about: {
             badge: 'Наша история',
-            title: 'О компании Ridera',
+            title: 'О компании',
             subtitle: 'Помогаем получить собственный автомобиль без банков и кредитов',
             tabs: {
                 mission: 'Миссия',
@@ -174,8 +174,8 @@ export const translations = {
                 partners: 'Партнёры'
             },
             mission: {
-                title: 'О Ridera Kazakhstan',
-                description: 'Ridera Kazakhstan — компания по аренде автомобилей с правом выкупа. Мы помогаем людям получить собственный автомобиль без банков и кредитов.',
+                title: 'Ridera Kazakhstan',
+                description: 'Мы — компания по аренде автомобилей с правом выкупа. Помогаем людям получить собственный автомобиль без банков и кредитов.',
                 features: [
                     'Без проверки кредитной истории',
                     'Быстрое одобрение за 2 минуты',
@@ -298,7 +298,7 @@ export const translations = {
             address: 'Алматы қ., Мүсабаев к-сі 36',
             menu: {
                 conditions: 'Шарттар',
-                cars: 'Автомобильдер',
+                cars: 'Автокөлік каталогы',
                 questions: 'Сұрақтар',
                 about: 'Компания туралы',
                 reviews: 'Пікірлер',
@@ -333,8 +333,8 @@ export const translations = {
 
         // Cars
         cars: {
-            title: 'Автомобильдер',
-            subtitle: 'Өзіңізге ұнайтын автомобильді таңдаңыз',
+            title: 'Автокөлік каталогы',
+            subtitle: 'Көңіліңізден шыққан автокөлікті таңдаңыз',
             perDay: 'күн',
             detailsButton: 'Толығырақ',
             photoPlaceholder: 'Фото үшін орын',
@@ -458,7 +458,7 @@ export const translations = {
         // About
         about: {
             badge: 'Біздің тарих',
-            title: 'Ridera компаниясы туралы',
+            title: 'Компания туралы',
             subtitle: 'Банктер мен несиелерсіз жеке автомобиль алуға көмектесеміз',
             tabs: {
                 mission: 'Миссия',
@@ -466,8 +466,8 @@ export const translations = {
                 partners: 'Серіктестер'
             },
             mission: {
-                title: 'Ridera Kazakhstan туралы',
-                description: 'Ridera Kazakhstan - сатып алу құқығымен автомобиль жалдау компаниясы. Біз адамдарға банктер мен несиелерсіз жеке автомобиль алуға көмектесеміз.',
+                title: 'Ridera Kazakhstan',
+                description: 'Біз - сатып алу құқығымен автомобиль жалдау компаниясымыз. Адамдарға банктер мен несиелерсіз жеке автомобиль алуға көмектесеміз.',
                 features: [
                     'Несиелік тарихты тексермейміз',
                     '2 минутта жылдам мақұлдау',

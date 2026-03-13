@@ -31,16 +31,6 @@ export default function Hero() {
                     {/* Левая часть */}
                     <div className={`lg:col-span-5 space-y-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
                         }`}>
-                        {/* Бейдж */}
-                        <div className={`inline-flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-full text-sm font-semibold border border-slate-200 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-                            }`} style={{ transitionDelay: '100ms' }}>
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-600"></span>
-                            </span>
-                            {t.hero.badge}
-                        </div>
-
                         {/* Заголовок */}
                         <div className={`space-y-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                             }`} style={{ transitionDelay: '200ms' }}>

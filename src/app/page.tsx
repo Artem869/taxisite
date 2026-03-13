@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Cars from '@/components/Cars'
-import Advantages from '@/components/Advantages'
+import WhyChoose from '@/components/WhyChoose'
 import Conditions from '@/components/Conditions'
 import About from '@/components/About'
 import Reviews from '@/components/Reviews'
@@ -15,7 +15,7 @@ export default function Home() {
             <main className="min-h-screen">
                 <Hero />
                 <Cars />
-                <Advantages />
+                <WhyChoose />
                 <Conditions />
                 <About />
                 <Reviews />
