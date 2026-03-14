@@ -103,8 +103,8 @@ export const metadata: Metadata = {
         },
     },
     verification: {
-        google: 'YOUR_GOOGLE_VERIFICATION_CODE', // Замените после регистрации в Google Search Console
-        yandex: 'YOUR_YANDEX_VERIFICATION_CODE', // Замените после регистрации в Yandex Webmaster
+        google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+        yandex: 'f7f449b7a9ab445c',
     },
 }
 
@@ -231,7 +231,7 @@ export default function RootLayout({
                         `,
                     }}
                 />
-                
+
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
