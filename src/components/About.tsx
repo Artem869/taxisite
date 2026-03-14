@@ -139,7 +139,7 @@ export default function About() {
     const secondRow = partners.slice(Math.ceil(partners.length / 2))
 
     return (
-        <section ref={sectionRef} id="о-компании" className="relative py-20 overflow-hidden">
+        <section ref={sectionRef} id="о-компании" className="relative py-12 md:py-16 overflow-hidden">
             {/* Анимированный фон */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-100"></div>
 

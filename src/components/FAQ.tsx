@@ -12,7 +12,7 @@ export default function FAQ() {
     }
 
     return (
-        <section id="вопросы" className="relative py-20 overflow-hidden bg-white">
+        <section id="вопросы" className="relative py-12 md:py-16 overflow-hidden bg-white">
             <div className="relative max-w-4xl mx-auto px-6">
                 {/* Заголовок */}
                 <div className="text-center mb-16">

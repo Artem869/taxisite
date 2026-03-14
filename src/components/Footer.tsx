@@ -16,7 +16,7 @@ export default function Footer() {
                 }}></div>
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-6 py-20">
+            <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-16">
                 {/* Верхняя часть  */}
                 <div className="mb-20">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">

@@ -122,7 +122,7 @@ export default function Cars() {
 
     return (
         <>
-            <section ref={sectionRef} id="автомобили" className="py-20 bg-white">
+            <section ref={sectionRef} id="автомобили" className="py-12 md:py-16 bg-white">
                 <div className="container mx-auto px-4">
                     {/* Заголовок секции */}
                     <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'

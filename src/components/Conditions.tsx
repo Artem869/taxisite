@@ -51,7 +51,7 @@ export default function Conditions() {
     ]
 
     return (
-        <section id="условия" className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50">
+        <section id="условия" className="relative py-12 md:py-16 bg-gradient-to-br from-slate-50 via-white to-slate-50">
             <div className="relative max-w-7xl mx-auto px-6">
                 {/* Заголовок секции */}
                 <div className="text-center mb-16">

@@ -163,7 +163,7 @@ export default function Reviews() {
     }
 
     return (
-        <section id="отзывы" className="py-20 bg-white relative overflow-hidden">
+        <section id="отзывы" className="py-12 md:py-16 bg-white relative overflow-hidden">
             {/* Декоративный фон */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-20 left-0 w-72 h-72 bg-slate-100 rounded-full blur-3xl opacity-60"></div>

@@ -6,7 +6,7 @@ export default function WhyChoose() {
     const { t } = useLanguage()
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-12 md:py-16 bg-white">
             <div className="container mx-auto px-4">
                 {/* Заголовок "Преимущества" */}
                 <div className="text-center mb-12">
