@@ -6,7 +6,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext'
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://taxisite-three.vercel.app/'),
+    metadataBase: new URL('https://ridera.kz/'),
     title: {
         default: 'Ridera - Аренда автомобилей с выкупом в Алматы',
         template: '%s | Ridera'
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'ru_KZ',
-        url: 'https://taxisite-three.vercel.app/',
+        url: 'https://ridera.kz/',
         siteName: 'Ridera - Аренда автомобилей',
         title: 'Ridera - Аренда автомобилей в Алматы | Авто под выкуп',
         description: 'Аренда автомобилей в Алматы. Kia Seltos, Chevrolet Monza. Цены от 13000₸/сутки. Быстрое оформление за 30 минут. Звоните: +7 775 042 69 45',
@@ -117,11 +117,11 @@ export default function RootLayout({
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': ['LocalBusiness', 'AutoRental'],
-        '@id': 'https://taxisite-three.vercel.app/#business',
+        '@id': 'https://ridera.kz/#business',
         name: 'Ridera',
         legalName: 'Ridera Kazakhstan',
         description: 'Аренда автомобилей c возможностью выкупа в Алматы',
-        url: 'https://taxisite-three.vercel.app/',
+        url: 'https://ridera.kz/',
         telephone: '+77750426945',
         email: 'ceo@taxigroup.kz',
         address: {
@@ -143,8 +143,8 @@ export default function RootLayout({
                 closes: '18:00'
             }
         ],
-        image: 'https://taxisite-three.vercel.app/og-image-v3.png',
-        logo: 'https://taxisite-three.vercel.app/logo.png',
+        image: 'https://ridera.kz/og-image-v3.png',
+        logo: 'https://ridera.kz/logo.png',
         sameAs: [
             'https://www.instagram.com/ridera.kz'
         ],
